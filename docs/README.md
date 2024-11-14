@@ -4,7 +4,7 @@
 ## 1. Create Roles and Users in PostgreSQL
 ### Log into PostgreSQL
 ```bash
-psql -U postgres
+psql -U postgres -h localhost
 ```
 ### Create Group Roles
 Define roles based on access needs (e.g., `viewer`, `editor`, `admin`).
