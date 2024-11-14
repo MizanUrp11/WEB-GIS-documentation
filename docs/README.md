@@ -6,7 +6,7 @@
 ```bash
 psql -U postgres
 ```
-### Create Group Roles: 
+### Create Group Roles
 Define roles based on access needs (e.g., `viewer`, `editor`, `admin`).
 ```sql
 CREATE ROLE viewer NOINHERIT;
@@ -41,6 +41,7 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin;
 - Go to `Settings > User Profiles > New Profile…`
 - Name profiles according to the PostgreSQL roles, e.g., `ViewerProfile`, `EditorProfile`, `AdminProfile`.
 - Each profile will have its own configuration folder.
+
 ### Configure Database Connections for Each Profile
 - Switch to the specific `QGIS profile` via `Settings > User Profiles.`
 - Open `Data Source Manager` via `Layer > Add Layer > Add PostGIS Layer…`
