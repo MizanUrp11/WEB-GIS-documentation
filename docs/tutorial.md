@@ -109,3 +109,5 @@ ___
 ```
 <!-- This is a comment -->
 ```
+
+[Setting Up QGIS User Profiles with PostgreSQL Role Management](README.md)
