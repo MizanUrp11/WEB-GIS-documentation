@@ -347,4 +347,137 @@ DROP VIEW IF EXISTS public.hr_emp_vw;
 ```
 \q
 ```
+
+## 6. Table Management
+### Create a simple DB
+
+> Make a minimal Database with owner `postgres` and Table space `pg_default`
+```
+	-- Database: employee
+	-- DROP DATABASE IF EXISTS employee;
+	CREATE DATABASE employee
+		WITH
+		OWNER = postgres
+		ENCODING = 'UTF8'
+		LC_COLLATE = 'English_United States.1252'
+		LC_CTYPE = 'English_United States.1252'
+		LOCALE_PROVIDER = 'libc'
+		TABLESPACE = pg_default
+		CONNECTION LIMIT = -1
+		IS_TEMPLATE = False;
+```
+### Create Tables
+> 1. Create table with name `dept`, TABLESPACE `pg_default` owner `postgres`
+```
+	-- Table: public.dept
+	-- DROP TABLE IF EXISTS public.dept;
+	
+	CREATE TABLE IF NOT EXISTS public.dept
+	(
+		dept_id bigint NOT NULL,
+		dept_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+		dept_role character varying(100) COLLATE pg_catalog."default",
+		CONSTRAINT dept_pk PRIMARY KEY (dept_id)
+	)
+
+	TABLESPACE pg_default;
+
+	ALTER TABLE IF EXISTS public.dept
+		OWNER to postgres;
+```
+> 2. create another table `emp` with owner `postgres`, pk = `emp_pk`, fk = `dept_fk`
+```
+	-- Table: public.emp
+	-- DROP TABLE IF EXISTS public.emp;
+	CREATE TABLE IF NOT EXISTS public.emp
+	(
+		emp_id bigint NOT NULL,
+		dept_id bigint,
+		emp_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+		emp_sal bigint,
+		emp_role character varying(100) COLLATE pg_catalog."default",
+		CONSTRAINT emp_pk PRIMARY KEY (emp_id),
+		CONSTRAINT dept_fk FOREIGN KEY (dept_id)
+			REFERENCES public.dept (dept_id) MATCH SIMPLE
+			ON UPDATE CASCADE
+			ON DELETE CASCADE
+	)
+
+	TABLESPACE pg_default;
+	
+	ALTER TABLE IF EXISTS public.emp
+		OWNER to postgres;
+```
+### Insert records
+> 3. INSERT records into `dept` table
+```
+INSERT INTO public.dept(dept_id, dept_name, dept_role) VALUES(10, 'CRM', 'Mr. Mizan');
+
+INSERT INTO public.dept(dept_id, dept_name, dept_role) VALUES(20, 'SAP', 'Mr. Bart');
+
+INSERT INTO public.dept(dept_id, dept_name, dept_role) VALUES(30, 'Delivery', 'Mr. Nelson');
+```
+
+> 4. Insert rows into `emp` table
+```
+INSERT INTO public.emp(emp_id, dept_id, emp_name, emp_sal, emp_role) VALUES(1, 10, 'Mr. Selim', 5000, 'DBA');
+
+INSERT INTO public.emp(emp_id, dept_id, emp_name, emp_sal, emp_role) VALUES(2, 10, 'Mr. Jaman', 8000, 'DBA');
+
+INSERT INTO public.emp(emp_id, dept_id, emp_name, emp_sal, emp_role) VALUES(3, 20, 'Mr. Nibir', 4000, 'Typist');
+
+INSERT INTO public.emp(emp_id, dept_id, emp_name, emp_sal, emp_role) VALUES(4, 20, 'Mr. Imran', 6000, 'Typist');
+
+INSERT INTO public.emp(emp_id, dept_id, emp_name, emp_sal, emp_role) VALUES(5, 30, 'Mr. Imam', 4000, 'Guard');
+
+INSERT INTO public.emp(emp_id, dept_id, emp_name, emp_sal, emp_role) VALUES(6, 30, 'Mr. Tamim', 4000, 'Guard');
+```
+### Update records
+> Update statement will CASCADE to effect of the updates to its all dependent.
+```
+UPDATE public.dept SET dept_id = 40 WHERE dept_id = 20;
+```
+### Import a Remote Database (Option 1)
+?> Import complete SCHEMA procedure.
+
+> We want to access `employee` or another Database information from `human_resource` Database. Open `query tool` from `human_resource` Database
+
+> Step-1: Create extension to access the remote data
+```
+CREATE EXTENSION postgres_fdw SCHEMA public;
+GRANT USAGE ON FOREIGN DATA WRAPPER postgres_fdw TO Postgres;
+```
+> Step-2: Create Server and give access to postgres user.
+```
+CREATE SERVER employee_server FOREIGN DATA WRAPPER postgres_fdw OPTIONS(host 'localhost', dbname 'employee' port '5432');
+ALTER SERVER employee_server OWNER TO postgres;
+```
+> Step-3: Create user mapping for postgres user
+```
+CREATE USER MAPPING FOR postgres SERVER employee_server OPTIONS (user 'postgres', password '1234');
+```
+> Step-4: Create SCHEMA `public_emp` and GRANT access `all` to user.
+```
+CREATE SCHEMA public_emp;
+GRANT ALL ON SCHEMA public_emp TO postgres;
+```
+> Step-5(A): Import the `public` SCHEMA from `employee` Database to `public_emp` SCHEMA into `human_resource` database. It will import all tables from the schema.
+```
+IMPORT FOREIGN SCHEMA public FROM SERVER employee_server INTO public_emp;
+```
+
+!> Step-5(B): To import any specific table `dept` use the statement below.
+```
+IMPORT FOREIGN SCHEMA public LIMIT to (dept) FROM SERVER employee_server INTO public_emp;
+```
+> Step-6: Check the data imported
+```
+select * from public_emp.dept;
+select * from public_emp.emp;
+```
+
+### Import a Remote Database (Option 2)
+?> Create a FOREIGN Table which will point to the source database table
+
+
 [Tutorial](tutorial.md)
