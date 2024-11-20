@@ -477,7 +477,57 @@ select * from public_emp.emp;
 ```
 
 ### Import a Remote Database (Option 2)
-?> Create a FOREIGN Table which will point to the source database table
+?> Create a FOREIGN Table which will point to the source database table. 
+> 1. Step-1 to Step-3 will be the same.
+> 2. Step-4: Create a `sales` table in `employee` Database
+```
+CREATE TABLE IF NOT EXISTS public.sales
+-- Table: public.sales
+-- DROP TABLE IF EXISTS public.sales;
+
+CREATE TABLE IF NOT EXISTS public.sales
+(
+    sales_id bigint NOT NULL,
+    sales_person character varying(100) COLLATE pg_catalog."default",
+    sales_product character varying(100) COLLATE pg_catalog."default",
+    CONSTRAINT sales_pkey PRIMARY KEY (sales_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.sales OWNER to postgres;
+```
+
+> 3. Enter some data in `sales` table
+```
+INSERT INTO public.sales(sales_id, sales_person, sales_product)
+VALUES (100,'Mr. Chang', 'Laptop');
+
+INSERT INTO public.sales(sales_id, sales_person, sales_product)
+VALUES (101,'Mr. Kang', 'Bag');
+
+INSERT INTO public.sales(sales_id, sales_person, sales_product)
+VALUES (102,'Mr. Lue', 'Memory Card');
+
+select * from public.sales;
+```
+
+> 4. Step-5: Create a FOREIGN table `sales` in the target Database under public SCHEMA of `human_resource` Database
+```
+CREATE FOREIGN TABLE IF NOT EXISTS public.sales
+(
+    sales_id bigint NOT NULL,
+    sales_person character varying(100) COLLATE pg_catalog."default",
+    sales_product character varying(100) COLLATE pg_catalog."default"
+)
+
+SERVER employee_server
+OPTIONS (schema_name 'public', table_name 'sales');
+
+ALTER TABLE IF EXISTS public.sales OWNER to postgres;
+
+SELECT * FROM sales;
+```
 
 
 [Tutorial](tutorial.md)
