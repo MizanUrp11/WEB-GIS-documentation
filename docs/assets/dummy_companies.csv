@@ -1,0 +1,101 @@
+org_index,organization_id,name,Website,country,description,founded,Industry,number_of_employees
+1,R9BTFVN6,Company 1,www.company1.co,Japan,Description for Company 1,1950,Manufacturing,2230
+2,5FSN66E4,Company 2,www.company2.org,Australia,Description for Company 2,1968,Transportation,7855
+3,M1PDBNEJ,Company 3,www.company3.net,USA,Description for Company 3,1962,Real Estate,5664
+4,SFQUDNAZ,Company 4,www.company4.net,Canada,Description for Company 4,1958,Real Estate,1582
+5,23N1XUEA,Company 5,www.company5.org,India,Description for Company 5,1939,Transportation,4669
+6,9RUYTMRH,Company 6,www.company6.io,Germany,Description for Company 6,2022,Real Estate,4363
+7,DORSCG83,Company 7,www.company7.io,France,Description for Company 7,2007,Healthcare,2371
+8,CLCAHAUO,Company 8,www.company8.net,UK,Description for Company 8,1986,Manufacturing,3456
+9,AGGTKO2G,Company 9,www.company9.com,USA,Description for Company 9,1904,Healthcare,5167
+10,J0BOE95B,Company 10,www.company10.co,France,Description for Company 10,1969,Finance,8560
+11,4WS2CSH8,Company 11,www.company11.io,UK,Description for Company 11,1926,Technology,8859
+12,NZ0S7S2Q,Company 12,www.company12.io,Brazil,Description for Company 12,1929,Manufacturing,5774
+13,TJTH5ECL,Company 13,www.company13.co,Canada,Description for Company 13,2001,Manufacturing,8898
+14,CA1QXTSM,Company 14,www.company14.net,Japan,Description for Company 14,1968,Finance,4674
+15,0Y6RLM5B,Company 15,www.company15.com,Japan,Description for Company 15,1976,Telecommunications,2955
+16,9CF25CMQ,Company 16,www.company16.io,Japan,Description for Company 16,1923,Retail,9307
+17,O08SD59K,Company 17,www.company17.co,Brazil,Description for Company 17,1962,Education,6525
+18,DGEMGHSB,Company 18,www.company18.net,Germany,Description for Company 18,2017,Transportation,1030
+19,DF7UIZZN,Company 19,www.company19.co,Brazil,Description for Company 19,2020,Transportation,6180
+20,YS8EXKCV,Company 20,www.company20.net,Brazil,Description for Company 20,1998,Healthcare,2818
+21,40HAGH4T,Company 21,www.company21.net,China,Description for Company 21,1997,Real Estate,3120
+22,XTAH8THU,Company 22,www.company22.org,France,Description for Company 22,1980,Manufacturing,2689
+23,ZS1RAK0T,Company 23,www.company23.org,Australia,Description for Company 23,1964,Energy,5713
+24,QWNKMYNV,Company 24,www.company24.com,France,Description for Company 24,2002,Transportation,8515
+25,C55I7OW4,Company 25,www.company25.org,Japan,Description for Company 25,1946,Real Estate,9251
+26,MRWUXJNY,Company 26,www.company26.net,UK,Description for Company 26,2023,Retail,896
+27,YQF0TTJ2,Company 27,www.company27.org,Germany,Description for Company 27,1936,Finance,6585
+28,L0Q18CYI,Company 28,www.company28.org,Germany,Description for Company 28,1930,Technology,3983
+29,NGPN8E6A,Company 29,www.company29.org,Japan,Description for Company 29,1928,Real Estate,5488
+30,K25RSGR5,Company 30,www.company30.org,Germany,Description for Company 30,1955,Finance,8602
+31,UNYXEEK4,Company 31,www.company31.net,China,Description for Company 31,1955,Education,8563
+32,8BNL9K3A,Company 32,www.company32.co,Canada,Description for Company 32,1965,Telecommunications,2446
+33,1ZWSC6PE,Company 33,www.company33.com,France,Description for Company 33,1904,Technology,4755
+34,LXEDOBU1,Company 34,www.company34.net,Japan,Description for Company 34,1937,Energy,6009
+35,9M6NL42C,Company 35,www.company35.org,Canada,Description for Company 35,2021,Transportation,8353
+36,USAJ062Z,Company 36,www.company36.com,Japan,Description for Company 36,1981,Education,5217
+37,JGXYYZW7,Company 37,www.company37.org,Germany,Description for Company 37,1911,Retail,2682
+38,4TP2OG82,Company 38,www.company38.net,USA,Description for Company 38,2013,Energy,9757
+39,NQ7NXUAO,Company 39,www.company39.io,China,Description for Company 39,1920,Technology,1338
+40,BPYSSAIV,Company 40,www.company40.io,India,Description for Company 40,1907,Retail,5362
+41,994UPTHY,Company 41,www.company41.net,Brazil,Description for Company 41,1975,Technology,9509
+42,1U9Y8X1S,Company 42,www.company42.org,Australia,Description for Company 42,1913,Healthcare,9326
+43,KNOUDYOM,Company 43,www.company43.io,Japan,Description for Company 43,1956,Transportation,3195
+44,JTUAOWHC,Company 44,www.company44.net,USA,Description for Company 44,1902,Energy,4573
+45,OCLG3NYO,Company 45,www.company45.com,Germany,Description for Company 45,1983,Telecommunications,8631
+46,SLCWMPV5,Company 46,www.company46.net,UK,Description for Company 46,2008,Technology,4144
+47,3AISXQL0,Company 47,www.company47.co,UK,Description for Company 47,1979,Healthcare,4425
+48,RK95IL5Q,Company 48,www.company48.com,Canada,Description for Company 48,2006,Telecommunications,223
+49,5ZSO2NBR,Company 49,www.company49.net,France,Description for Company 49,1923,Telecommunications,166
+50,APMXTZSJ,Company 50,www.company50.org,China,Description for Company 50,2004,Telecommunications,7381
+51,N831JWQB,Company 51,www.company51.io,Brazil,Description for Company 51,1917,Telecommunications,8618
+52,WIKQ2RHQ,Company 52,www.company52.com,Brazil,Description for Company 52,1939,Education,8179
+53,FG0JDK7L,Company 53,www.company53.com,USA,Description for Company 53,1974,Finance,3253
+54,YI4W1E3R,Company 54,www.company54.com,Australia,Description for Company 54,1997,Technology,1149
+55,6NUEXL7J,Company 55,www.company55.io,Australia,Description for Company 55,1919,Transportation,3564
+56,HVJ4GGNC,Company 56,www.company56.com,USA,Description for Company 56,2003,Finance,4448
+57,MDN9VNJ2,Company 57,www.company57.com,UK,Description for Company 57,1963,Retail,6090
+58,15B3DYFH,Company 58,www.company58.co,India,Description for Company 58,2009,Education,4406
+59,V7J9ZFXI,Company 59,www.company59.io,Japan,Description for Company 59,1989,Real Estate,1509
+60,G1XNL4BT,Company 60,www.company60.net,UK,Description for Company 60,1961,Real Estate,9783
+61,WPZJCWC8,Company 61,www.company61.io,Canada,Description for Company 61,1909,Telecommunications,3757
+62,CNOLZ8YS,Company 62,www.company62.com,Japan,Description for Company 62,1994,Transportation,1521
+63,ZQUY5UYH,Company 63,www.company63.io,Canada,Description for Company 63,2014,Transportation,3351
+64,ITYWOLGN,Company 64,www.company64.net,China,Description for Company 64,1957,Manufacturing,4215
+65,Y1PYI7F1,Company 65,www.company65.io,Brazil,Description for Company 65,1988,Transportation,9076
+66,IHPFPNX0,Company 66,www.company66.com,Japan,Description for Company 66,1963,Finance,5344
+67,W3NVX9XD,Company 67,www.company67.io,Germany,Description for Company 67,1913,Healthcare,7274
+68,M6RR42S1,Company 68,www.company68.io,Japan,Description for Company 68,1920,Healthcare,5316
+69,VFPS565F,Company 69,www.company69.io,France,Description for Company 69,1909,Retail,159
+70,G4CMEBJH,Company 70,www.company70.co,Brazil,Description for Company 70,2018,Real Estate,881
+71,26UNTAAR,Company 71,www.company71.org,UK,Description for Company 71,1979,Technology,8678
+72,J1ZAVWXJ,Company 72,www.company72.io,Brazil,Description for Company 72,1957,Transportation,3883
+73,WWMCC6PV,Company 73,www.company73.org,Australia,Description for Company 73,1923,Transportation,9020
+74,JNFBDD1T,Company 74,www.company74.org,Japan,Description for Company 74,1959,Healthcare,9238
+75,7O5LQAKU,Company 75,www.company75.org,China,Description for Company 75,1913,Telecommunications,983
+76,MEQ0111J,Company 76,www.company76.io,UK,Description for Company 76,1944,Finance,1335
+77,553E83DM,Company 77,www.company77.org,USA,Description for Company 77,1933,Technology,5411
+78,RWG9GOR3,Company 78,www.company78.org,Brazil,Description for Company 78,1917,Technology,4425
+79,NUE1IL61,Company 79,www.company79.net,Brazil,Description for Company 79,1949,Telecommunications,5466
+80,FIZONT5F,Company 80,www.company80.co,Canada,Description for Company 80,1971,Energy,3049
+81,YTW9HV0H,Company 81,www.company81.net,China,Description for Company 81,1968,Technology,4826
+82,0NCF0YK1,Company 82,www.company82.com,China,Description for Company 82,2008,Finance,2974
+83,VZLMYF9Q,Company 83,www.company83.io,China,Description for Company 83,2003,Manufacturing,6186
+84,14XVUR1S,Company 84,www.company84.org,Brazil,Description for Company 84,1983,Real Estate,2903
+85,5RQEGQER,Company 85,www.company85.net,USA,Description for Company 85,1965,Technology,7976
+86,P63BVGIP,Company 86,www.company86.net,UK,Description for Company 86,1943,Transportation,4571
+87,62US4SPU,Company 87,www.company87.io,Japan,Description for Company 87,2019,Education,2555
+88,8VJVIUCQ,Company 88,www.company88.org,Canada,Description for Company 88,1978,Manufacturing,1134
+89,TU2A30IK,Company 89,www.company89.org,Germany,Description for Company 89,1992,Retail,9364
+90,VSWONY4X,Company 90,www.company90.org,France,Description for Company 90,1905,Technology,4298
+91,A2363J0F,Company 91,www.company91.co,Germany,Description for Company 91,1943,Real Estate,3174
+92,J4YPNV87,Company 92,www.company92.io,UK,Description for Company 92,1915,Telecommunications,7304
+93,2IE30CNP,Company 93,www.company93.io,UK,Description for Company 93,1958,Technology,2415
+94,B90M18KB,Company 94,www.company94.co,USA,Description for Company 94,1918,Healthcare,2932
+95,3W4T6X6V,Company 95,www.company95.org,Australia,Description for Company 95,1984,Finance,8700
+96,WDYEG5KC,Company 96,www.company96.io,UK,Description for Company 96,1915,Manufacturing,3530
+97,MSJ7WGY2,Company 97,www.company97.com,Brazil,Description for Company 97,1979,Telecommunications,1110
+98,N9MWFB4B,Company 98,www.company98.com,Brazil,Description for Company 98,1966,Energy,8381
+99,ZFMD85QC,Company 99,www.company99.com,Germany,Description for Company 99,1973,Education,8693
+100,2M3LNKDU,Company 100,www.company100.com,Germany,Description for Company 100,1989,Technology,1705

@@ -529,5 +529,82 @@ ALTER TABLE IF EXISTS public.sales OWNER to postgres;
 SELECT * FROM sales;
 ```
 
+### Import CSV data
+> download from ./assets/dummy_companies.csv
+from the [link](https://github.com/MizanUrp11/WEB-GIS-documentation/tree/master/docs)
+
+1. Create a Database `organization` and Table `org` to import the CSV
+```
+	-- Database: organization
+	-- DROP DATABASE IF EXISTS organization;
+
+	CREATE DATABASE organization
+		WITH
+		OWNER = postgres
+		ENCODING = 'UTF8'
+		LC_COLLATE = 'English_United States.1252'
+		LC_CTYPE = 'English_United States.1252'
+		LOCALE_PROVIDER = 'libc'
+		TABLESPACE = pg_default
+		CONNECTION LIMIT = -1
+		IS_TEMPLATE = False;
+```
+
+2. Generate sql configuration based on the CSV
+
+> Start the sqlite3 command line tool
+```cmd
+sqlite3
+```
+
+> Create a temporary Database
+```cmd
+.open test.db
+```
+
+> Set mode to CSV
+```cmd
+.mode csv
+```
+
+> Import the CSV file
+```
+.import "C:/Users/.../assets/dummy_companies.csv"  dummy_companies
+```
+
+> Save sql file
+```cmd
+.output dummy_companies.sql
+```
+
+> Export the Table
+```
+.dump dummy_companies
+```
+> Clear the memory
+```
+.output stdout
+```
+
+> EXECUTE the sql in the query tool in public schema of organization 
+```
+CREATE TABLE IF NOT EXISTS "org"(
+"org_index" TEXT, 
+"organization_id" TEXT, 
+"name" TEXT, "Website" TEXT,
+"country" TEXT, "description" TEXT,
+"founded" TEXT, "Industry" TEXT,
+"number_of_employees" TEXT);
+```
+### Import and Export data in psql
+> 4 A. By GUI: Import the data by GUI `org` > `Import/export data`
+> 4 B. By psql
+```Import
+\copy public.org (org_index, organization_id, name, "Website", country, description, founded, "Industry", number_of_employees) FROM 'C:\Users\Mizan\Documents\works\documentation\docs\assets\dummy_companies.csv' DELIMITER ',' CSV HEADER;
+```
+```Export
+\copy public.org (org_index, organization_id, name, "Website", country, description, founded, "Industry", number_of_employees) TO 'C:\Users\Mizan\Documents\works\documentation\docs\assets\dummy_companies_export.csv' DELIMITER ',' CSV HEADER;
+```
+> To Remove all data from the table `org` > `truncate`
 
 [Tutorial](tutorial.md)
