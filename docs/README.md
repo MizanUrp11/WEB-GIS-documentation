@@ -648,5 +648,74 @@ ALTER TABLE app.org_vw OWNER TO postgres;
 	ALTER TABLE app.org_aftr_2000_vw OWNER TO postgres;
 ```
 
+### Postgres Tyes
+1. Create an new type `contact_typ` with `phone_no` and `email_id`.
+
+```
+create type public.contact_typ as
+(
+	phone_no bigint,
+	email_id character varying(100)
+);
+
+alter type public.contact_typ owner to postgres;
+```
+
+2. Create `Enum` type
+> These are options to insert automatically during data insert
+
+```
+create type public.shift_typ as enum
+( 'day', 'night' );
+
+alter type public.shift_typ owner to postgres;
+```
+3. Create `Range` type
+
+```
+CREATE TYPE public.shift_time_typ AS RANGE
+(
+    SUBTYPE=time
+);
+
+ALTER TYPE public.shift_time_typ
+    OWNER TO postgres;
+```
+
+4. Create `emp` table again with references to the `types`
+
+```
+CREATE TABLE public.emp
+(
+    emp_id bigint NOT NULL,
+    dept_id bigint NOT NULL,
+    emp_name character varying(100) NOT NULL,
+    emp_sal bigint,
+    emp_role contact_typ,
+    emp_shift shift_typ,
+    emp_shift_time shift_time_typ,
+    CONSTRAINT emp_pk PRIMARY KEY (emp_id),
+    CONSTRAINT dept_fk FOREIGN KEY (dept_id)
+        REFERENCES public.dept (dept_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+        NOT VALID
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.emp OWNER to postgres;
+```
+
+5. INSERT data
+
+```
+INSERT INTO public.emp 
+VALUES
+(1, 10, 'Alice Johnson', 75000, ROW(1234567890, 'alice.johnson@example.com')::contact_typ, 'day', '[09:00,17:00)'::shift_time_typ);
+```
+
+### Postgres Functions
+?> A function can validate data before insertion. Updating the function updates all processes that depend on it, reducing maintenance overhead. 
+
 
 [Tutorial](tutorial.md)
