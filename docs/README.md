@@ -607,4 +607,46 @@ CREATE TABLE IF NOT EXISTS "org"(
 ```
 > To Remove all data from the table `org` > `truncate`
 
+### Create Table Views
+?> views are virtual representations of data that show the outcomes of a SELECT query. Views can help to reduce the complexity of queries, and improve the query reusability.
+
+!> It is recommended to always create separate `SCHEMA` from a single Source Table.
+
+1. Create a new SCHEMA
+```
+CREATE SCHEMA app AUTHORIZATION postgres;
+```
+2. Create a view
+```
+CREATE VIEW app.org_vw AS
+SELECT * FROM public.org;
+ALTER TABLE app.org_vw OWNER TO postgres;
+```
+
+3. Update rows
+
+!> Change in views will reflect in the original Database!
+```
+	UPDATE app.org_vw SET org_index=102 WHERE org_index=2;
+
+	-- Check the data
+	SELECT * FROM app.org_vw WHERE org_index=102;
+	SELECT * FROM public.org WHERE org_index=102;
+
+	-- Rollback
+	UPDATE app.org_vw SET org_index='2' WHERE org_index='102';
+```
+
+4. Create views with filter `founded > '2000'`
+```
+	CREATE VIEW app.org_aftr_2000_vw
+	WITH (
+	  check_option=cascaded
+	) AS
+	SELECT * FROM public.org where founded > '2000';
+
+	ALTER TABLE app.org_aftr_2000_vw OWNER TO postgres;
+```
+
+
 [Tutorial](tutorial.md)
