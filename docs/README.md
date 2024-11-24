@@ -717,5 +717,8 @@ VALUES
 ### Postgres Functions
 ?> A function can validate data before insertion. Updating the function updates all processes that depend on it, reducing maintenance overhead. 
 
-
+## Spatial Data Management
+### Import shp
+### Import tables
+### 
 [Tutorial](tutorial.md)
